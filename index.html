@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formatter</title>
+  </head>
+  <body>
+    <h1>Formatter</h1>
+
+    <p>Paste the BinID:</p>
+    <input type="text" id="IDBin" />
+    <button onclick="convert()">Convert</button>
+
+    <h2>Bit ID:</h2>
+    <h3 id="BitID"></h3>
+  </body>
+
+  <script>
+    const convert = () => {
+      const binID = document.querySelector("#IDBin").value;
+      //5732abe008c148cb8e4e0a2a3e11333c
+      //5732abe0-08c1-48cb-8e4e-0a2a3e11333c
+      const bitID = `${binID.slice(0,8)}-${binID.slice(8,12)}-${binID.slice(12, 16)}-${binID.slice(16,20)}-${binID.slice(20)}`;
+      document.querySelector("#BitID").innerHTML = bitID;
+    };
+  </script>
+</html>
